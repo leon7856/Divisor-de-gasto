@@ -1,0 +1,296 @@
+/* assets/css/style.css */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+/* Prevenir overflow horizontal em todos os elementos principais */
+.container,
+.container-fluid,
+.row,
+.navbar,
+.card,
+.card-body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Garantir que a navbar não cause overflow */
+.navbar {
+    max-width: 100vw;
+}
+
+.navbar .container {
+    max-width: 100%;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 600;
+}
+
+.list-group-item {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.badge {
+    font-size: 0.75em;
+}
+
+.alert {
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    color: #495057;
+}
+
+.btn {
+    border-radius: 0.375rem;
+}
+
+.form-control, .form-select {
+    border-radius: 0.375rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+    
+    .container {
+        padding: 0 15px;
+        max-width: 100%;
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+        max-width: 100%;
+    }
+    
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+    }
+    
+    [class*="col-"] {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 100%;
+    }
+    
+    .navbar {
+        max-width: 100vw;
+        width: 100%;
+    }
+}
+
+
+/* assets/css/style.css - Adições */
+/* ... código anterior ... */
+
+/* Estilos para o footer */
+footer {
+    margin-top: auto;
+}
+
+/* Modal customizado */
+.modal-content {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Animações */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Loading spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Badges customizados */
+.badge {
+    font-size: 0.7em;
+}
+
+/* Cards com hover */
+.card:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Tabelas responsivas */
+.table-responsive {
+    border-radius: 0.375rem;
+}
+
+/* Alertas animados */
+.alert {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Botões com ícones */
+.btn i {
+    margin-right: 0.25rem;
+}
+
+/* Formulários */
+.form-control:focus, .form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* List groups customizados */
+.list-group-item {
+    transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsividade extra */
+@media (max-width: 576px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+    
+    .row {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    
+    [class*="col-"] {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    /* Prevenir overflow em todos os elementos */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    img, video, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar, footer, .btn, .alert {
+        display: none !important;
+    }
+    
+    .card {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Estilos para os botões de ação */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* Efeitos hover nos itens da lista */
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    transition: all 0.2s ease;
+}
+
+/* Remover translateX em mobile para evitar overflow */
+@media (max-width: 768px) {
+    .list-group-item:hover {
+        transform: none;
+    }
+}
+
+/* Badges */
+.badge {
+    font-size: 0.7em;
+}
+
+/* Modal de confirmação */
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
