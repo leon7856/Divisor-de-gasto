@@ -1,7 +1,7 @@
 
 # Sistema de Gestão de Consumos (Gastor)
 
-Este repositório contém uma aplicação web em PHP desenvolvida para controlar usuários, itens e seus consumos, gerando relatórios e um resumo das despesas ou uso de itens. O projeto segue uma arquitetura simples inspirada no padrão MVC (Model-View-Controller). Abaixo você encontra uma explicação detalhada do sistema, sua estrutura e como utilizá-lo.
+Este repositório contém uma aplicação web em PHP desenvolvida para controlar usuários, itens e seus consumos, gerando relatórios e um resumo das despesas ou uso de itens. O projeto segue uma arquitetura simples
 
 ---
 
@@ -58,79 +58,4 @@ Páginas que exibem formulários, tabelas e informações ao usuário:
 - `usuarios.php`, `itens.php`, `consumos.php`, `resumo.php` – telas principais.
 - `header.php`, `footer.php` – componentes comuns de layout.
 
-## ⚙️ Configuração e Instalação
 
-1. **Requisitos**:
-   - Servidor web com suporte a PHP 7.4 ou superior (Apache, Nginx, etc.).
-   - Banco de dados MySQL/MariaDB.
-
-2. **Banco de dados**:
-   - Crie um banco com nome de sua escolha.
-   - Importe o script SQL fornecido (caso exista) ou crie as tabelas `usuarios`, `itens`, `consumos` com campos adequados.
-   - Ajuste as credenciais em `config/database.php`:
-     ```php
-     $host = 'localhost';
-     $db   = 'nome_do_banco';
-     $user = 'usuario';
-     $pass = 'senha';
-     ```
-
-3. **Deploy**:
-   - Coloque os arquivos da aplicação no diretório-raiz do seu servidor.
-   - Garanta permissões adequadas para `index.php` e demais pastas.
-
-4. **Dependências**:
-   - Não há bibliotecas externas; a aplicação usa apenas PHP nativo.
-
-## 🚀 Uso
-
-1. Acesse `http://seu-servidor/` ou `localhost` no navegador.
-2. Navegue pelo menu para gerenciar usuários, itens ou registrar consumos.
-3. Clique em "Resumo" para ver totais e análises por período.
-
-**Observação:** não há autenticação implementada; recomenda-se adicionar se for expor publicamente.
-
-## 🛠️ Customização e Extensões
-
-Algumas ideias para evolução:
-
-- Implementar autenticação e controle de acesso.
-- Adicionar filtros por data nos relatórios.
-- Exportar dados para CSV/Excel.
-- Melhorar interface com frameworks JS/CSS.
-
-## 📂 Arquivo de Exemplo do Banco
-
-Caso você precise de um ponto de partida para as tabelas, um esboço SQL seria:
-
-```sql
-CREATE TABLE usuarios (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  nome VARCHAR(100) NOT NULL,
-  email VARCHAR(100)
-);
-
-CREATE TABLE itens (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  descricao VARCHAR(255) NOT NULL,
-  valor DECIMAL(10,2) NOT NULL
-);
-
-CREATE TABLE consumos (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  usuario_id INT NOT NULL,
-  item_id INT NOT NULL,
-  quantidade INT NOT NULL,
-  data DATE NOT NULL,
-  FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
-  FOREIGN KEY (item_id) REFERENCES itens(id)
-);
-```
-
-## 📘 Licença
-
-Este projeto é fornecido como exemplo de sistema e pode ser adaptado livremente.
-
----
-
-Se precisar de ajuda adicional ou quiser adicionar funcionalidades, fique à vontade para perguntar! 😊
